@@ -94,6 +94,7 @@ body {
     border-radius: 1rem;
     padding: .1rem 1.75em;
     transition: .3s ease-in-out;
+    font-size: var(--fs-xs);
 }
 
 .button:hover,
