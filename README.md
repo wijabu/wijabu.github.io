@@ -1,2 +1,2 @@
 # Portfolio
-My personal portfolio website written almost entirely in HTML and CSS with a touch of JavaScript. 
+My personal portfolio website written in HTML, CSS and a touch of Vanilla JavaScript. 
