@@ -69,7 +69,7 @@ a {
 body {
     width: 100%;
     margin: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-family: var(--ff-body);
     font-weight: 100;
 }
@@ -95,6 +95,7 @@ body {
     padding: .1rem 1.75em;
     transition: .3s ease-in-out;
     font-size: var(--fs-xs);
+    /* transform: rotate(-5grad); */
 }
 
 .button:hover,
@@ -200,6 +201,86 @@ body {
 .card__title {
     margin: .5em 0 0;
 }
+
+/* CAROUSEL */
+
+.carousel {
+    color: #fff;
+    background-color: var(--bg-prp);
+    position: relative;
+}
+
+.carousel__button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: none;
+}
+
+.carousel__button--left {
+    left: 0.5rem;
+}
+
+.carousel__button--right {
+    right: 0.5rem;
+}
+
+.carousel__button svg {
+    width: 20px;
+}
+
+.carousel__indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 10px; 
+    height: 10px;
+    background: rgba(255, 255, 255, .25);
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.carousel__indicator.current-slide {
+    background: rgba(255, 255, 255, .75);
+}
+
+.carousel__nav {
+    /* background: pink; */
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel__track-container {
+    height: 100%;
+    position: relative;
+    padding: 1em;
+}
+
+.carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+}
+
+/* CAROUSEL */
 
 .columns {
     display: grid;
@@ -347,6 +428,18 @@ img {
 
 }
 
+.media-quote h2,
+.quotes h2 {
+    font-family: "Nathan";
+    font-size: var(--fs-md);
+    text-align: left;
+}
+
+.media-quote p {
+    text-align: right;
+    font-size: var(--fs-sm);
+}
+
 .menubtn {
     background-color: transparent;
     border: none;
@@ -461,8 +554,9 @@ img {
     font-style: italic;
 }
 
-.quotes {
+/* .quotes {
     display: grid;
+    grid-auto-flow: column;
 }
 
 .quotes h2 {
@@ -474,7 +568,7 @@ img {
 .quotes p {
     text-align: right;
     font-size: var(--fs-sm);
-}
+} */
 
 .subhead {
     font-size: var(--fs-sm);
@@ -515,6 +609,10 @@ img {
         border-bottom-right-radius: 75px;
     }
 
+    .carousel {
+        min-height: 40vh;
+    }
+
     .columns {
         grid-auto-flow: column;
         gap: 1em;
@@ -539,6 +637,14 @@ img {
         gap: 1rem;
     }
 
+    .media-quote {
+        padding: 2em 6em;
+    }
+
+    .media-quote p {
+        padding-right: 5em;
+    }
+
     .menubtn {
         display: none;
     }
@@ -550,14 +656,6 @@ img {
 
     .nav-toggle-label {
         display: none;
-    }
-
-    .quotes {
-        padding: 0 5em;
-    }
-
-    .quotes p {
-        padding-right: 5em;
     }
 
     .white {
@@ -580,6 +678,10 @@ img {
 
     .card__img-overlay span {
         margin: .5em;
+    }
+
+    .carousel {
+        min-height: 50vh;
     }
 
     .columns p:nth-child(-n+2) {
@@ -634,13 +736,15 @@ img {
         gap: 1rem;
     }
 
-    .quotes {
-        padding: 0 2em;
+    /* COMMENT THIS OUT */
+    .media-quote {
+        padding: 0 4em;
     }
 
-    .quotes p {
+    .media-quote p {
         padding-right: 1.75em;
     }
+    /* COMMENT THIS OUT */
 
     .white {
         font-size: var(--fs-md);

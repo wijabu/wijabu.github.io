@@ -20,7 +20,7 @@
         }
     </style>
 
-    <link rel="stylesheet" type="text/css" href="css/styles_3.css">
+    <link rel="stylesheet" type="text/css" href="css/styles_4.css">
     <link rel="shortcut icon" href="public/img/favicon.ico">
     
 </head>
@@ -209,17 +209,73 @@
 
             </div>
         </section>
-
+        
         <!-- QUOTE section -->
         <a name="quotes"></a>
-        <section class="break" id="quotes">
-            <div class="quotes">
-                <h2>
-                    Some people have no idea what they're doing, and a lot of them are really good at it.
-                </h2>
-                <p>
-                    – George Carlin
-                </p>
+        <section class="carousel" id="quotes">
+            <button class="carousel__button carousel__button--left">
+                <svg>
+                    <use href="#previous"></use>
+                  </svg>
+            </button>
+            
+            <div class="carousel__track-container">
+                <ul class="carousel__track">
+                    <li class="carousel__slide current-slide">
+                        <div class="media-quote">
+                            <h2>
+                                Some people have no idea what they're doing, and a lot of them are really good at it. 
+                            </h2>
+                            <p>– George Carlin</p>
+                        </div>
+                    </li>
+                    <li class="carousel__slide">
+                        <div class="media-quote">
+                            <h2>
+                                I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it.
+                            </h2>
+                            <p>– Bill Gates</p>
+                        </div>
+                    </li>
+                    <li class="carousel__slide">
+                        <div class="media-quote">
+                            <h2>
+                                You can fail at what you don't want, so you might as well take a chance on doing what you love.
+                            </h2>
+                            <p>– Jim Carrey</p>
+                        </div>
+                    </li>
+                    <li class="carousel__slide">
+                        <div class="media-quote">
+                            <h2>
+                                I’m sick of following my dreams, man. I’m just going to ask where they’re going and hook up with ’em later.
+                            </h2>
+                            <p>– Mitch Hedberg</p>
+                        </div>
+                    </li>
+                    <li class="carousel__slide">
+                        <div class="media-quote">
+                            <h2>
+                                Be willing to fail. Let yourself fail. Fail in the way and the place where you would want to fail. Fail, pick yourself up, and fail again. Because without this struggle, what is your success anyway?
+                            </h2>
+                            <p>– Charlie Day</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="carousel__button carousel__button--right">
+                <svg>
+                    <use href="#next"></use>
+                  </svg>
+            </button>
+
+            <div class="carousel__nav">
+                <button class="carousel__indicator current-slide"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
             </div>
         </section>
 
@@ -360,6 +416,18 @@
             </a>
         </section>
     </footer>
+
+    <svg class="hidden">
+        <symbol id="next" viewBox="0 0 256 512">
+          <path fill="white" fill-opacity="25%"
+            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+        </symbol>
+    
+        <symbol id="previous" viewBox="0 0 256 512">
+          <path fill="white" fill-opacity="25%"
+            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
+        </symbol>
+      </svg>
 
     <script src="js/app.js"></script>
 </body>
