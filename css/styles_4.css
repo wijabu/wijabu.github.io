@@ -682,6 +682,7 @@ img {
 
     .carousel {
         min-height: 50vh;
+        overflow: hidden;
     }
 
     .columns p:nth-child(-n+2) {
