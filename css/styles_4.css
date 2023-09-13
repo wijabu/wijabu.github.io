@@ -487,7 +487,6 @@ img {
 .primary {
     min-height: 100vh;
     min-height: 100svh;
-    padding: 3rem;
 }
 
 /* FANCY UNDERLINE HERE */
@@ -562,22 +561,6 @@ img {
     font-style: italic;
 }
 
-/* .quotes {
-    display: grid;
-    grid-auto-flow: column;
-}
-
-.quotes h2 {
-    font-family: "Nathan";
-    font-size: var(--fs-md);
-    text-align: left;
-}
-
-.quotes p {
-    text-align: right;
-    font-size: var(--fs-sm);
-} */
-
 .subhead {
     font-size: var(--fs-sm);
     font-weight: 700;
@@ -646,7 +629,7 @@ img {
     }
 
     .media-quote {
-        padding: 2em 6em;
+        padding: 5em 8em;
     }
 
     .media-quote p {
@@ -664,6 +647,10 @@ img {
 
     .nav-toggle-label {
         display: none;
+    }
+
+    .primary {
+        padding: 6rem;
     }
 
     .white {
@@ -716,6 +703,11 @@ img {
         grid-column: span 4;
     }
 
+    .grid__projects {
+        display: grid;
+        gap: 1rem;
+    }
+
     .logo {
         margin: .5rem auto .5rem 2rem;
     }
@@ -736,6 +728,10 @@ img {
         display: none;
     }
 
+    .primary {
+        padding: 3rem;
+    }
+
     #profile {
         flex-direction: column-reverse;
         justify-content: start;
@@ -746,11 +742,6 @@ img {
         max-width: 200px;
         max-height: 200px;
         margin-top: 2rem;
-    }
-
-    .grid__projects {
-        display: grid;
-        gap: 1rem;
     }
 
     .white {
