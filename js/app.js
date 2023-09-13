@@ -6,8 +6,6 @@ const hamburger = document.getElementById("hamburger");
 const xbox = document.getElementById("xbox");
 const dropdownOptions = dropdown.querySelectorAll(".dropdown_list-item")
 
-console.log(dropdownOptions)
-
 const menuToggle = function () {
     console.log("menu toggle")
     dropdown.classList.toggle("dropdown-open");
@@ -168,5 +166,31 @@ carouselNav.addEventListener("click", e => {
 // }
 
 
-////// parallax //////
+////// parallax / fade-in //////
 
+const projects = document.querySelectorAll(".fade-in");
+
+// console.log(projects)
+
+const fadeOptions = {
+    root: null, // default to the viewport
+    threshold: 0, // % of section that must be within viewport in order to trigger
+    rootMargin: "-150px"
+};
+
+const fadeIn = function(entries, observer) {
+    for (entry of entries) {
+        if(!entry.isIntersecting) {
+            return;
+        }
+        console.log(entry.target);
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target)
+    }
+}
+
+const appearOnScroll = new IntersectionObserver(fadeIn, fadeOptions)
+
+for (project of projects) {
+    appearOnScroll.observe(project);
+}

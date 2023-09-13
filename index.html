@@ -31,9 +31,6 @@
             <img src="public/img/blurry.jpeg" alt="logo of Wil Buchanan" class="logo">
         </a>
 
-        <!-- <input type="checkbox" class="nav-toggle" id="nav-toggle">
-        </input> -->
-
         <nav role="menubar" class="navigation-list">
             <a href="#about" role="menuitem" class="navigation-list__item purple">about</a>
             <a href="#projects" role="menuitem" class="navigation-list__item purple">projects</a>
@@ -75,12 +72,6 @@
                 </li>
             </ul>
         </div>
-
-        <!-- <label for="nav-toggle" class="nav-toggle-label">
-            <span class="material-symbols-outlined">
-                menu
-            </span>
-        </label> -->
     </header>
 
     <main>
@@ -91,7 +82,7 @@
             <div class="profile__text">
                 <h1 class="masthead">Hello, <span class="invisible">__</span></h1>
                 <h1 class="masthead"> <span class="invisible">__</span>World!</h1>
-                <p> My name is Wil Buchanan. <br /> I am a web developer located in Orlando, FL.
+                <p> My name is Wil Buchanan. <br /> I am a web developer located in Florida.
                     <br />
                     <br />
                     If you're here for <a class="profile__anchor" href="#projects"> my portfolio </a>, check that out
@@ -107,7 +98,7 @@
 
         <!-- TRUTHS section -->
         <a name="truths"></a>
-        <section class="break">
+        <section class="break" id="truths">
             <h3>Here are three stories about me. </h3>
             <h4>Two are true. Can you tell which is the lie? <!-- <span class="quote">(select one)</span> -->
             </h4>
@@ -280,9 +271,9 @@
         <a name="projects"></a>
         <section class="primary projects__container" id="projects">
             <h1>Projects</h1>
-            <section class="grid__projects">
+            <div class="grid__projects">
 
-                <div class="card__projects">
+                <div class="card__projects fade-in">
                     <div class="card__img-layout">
                         <img src="public/img/onbogo_2.png" class="card__img">
                         <div class="card__img-overlay">
@@ -306,7 +297,7 @@
                     </div>
                 </div>
 
-                <div class="card__projects">
+                <div class="card__projects fade-in">
                     <div class="card__img-layout">
                         <img src="public/img/yelpCamp.png" class="card__img">
                         <div class="card__img-overlay">
@@ -335,7 +326,7 @@
                     </div>
                 </div>
 
-                <div class="card__projects">
+                <div class="card__projects fade-in">
                     <div class="card__img-layout">
                         <img src="public/img/port_1.2.png" class="card__img">
                         <div class="card__img-overlay">
@@ -362,7 +353,7 @@
                     </div>
                 </div>
 
-            </section>
+            </div>
 
     </main>
 
@@ -373,7 +364,7 @@
         <div class="cta">
             <h4>Let's Build Something Great Together</h4>
         </div>
-        <section class="grid__footer">
+        <div class="grid__footer">
             <a href="mailto:williamjamesbuchanan@gmail.com" title="Email me" target="_blank">
                 <div class="card__footer" id="footer_res">
 
@@ -409,7 +400,7 @@
 
                 </div>
             </a>
-        </section>
+        </div>
     </footer>
 
     <svg class="hidden">
