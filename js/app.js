@@ -86,7 +86,7 @@ function autoScrollSlide() {
         updateDots(currentDot, navDots[0]);
     }
 
-    setTimeout("autoScrollSlide()", 10000);
+    setTimeout("autoScrollSlide()", 8000);
 }
 
 window.onload = autoScrollSlide();
