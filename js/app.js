@@ -1,10 +1,12 @@
 ////// nav bar //////
 
 const menubtn = document.getElementById("menubtn")
-
 const dropdown = document.getElementById("dropdown");
 const hamburger = document.getElementById("hamburger");
 const xbox = document.getElementById("xbox");
+const dropdownOptions = dropdown.querySelectorAll(".dropdown_list-item")
+
+console.log(dropdownOptions)
 
 const menuToggle = function () {
     console.log("menu toggle")
@@ -14,6 +16,11 @@ const menuToggle = function () {
 }
 
 menubtn.addEventListener("click", menuToggle)
+
+for (option of dropdownOptions) {
+    option.addEventListener("click", menuToggle)
+}
+
 
 
 ////// truths //////

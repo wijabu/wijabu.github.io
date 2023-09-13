@@ -274,21 +274,17 @@ body {
 }
 
 .carousel__track {
-    padding: 0;
-    margin: 0;
+    /* padding: 0; */
+    /* margin: 0; */
     list-style: none;
-    position: relative;
-    height: 100%;
-    display: grid;
+    /* margin-block-start: 0;
+    margin-block-end: 0; */
+    /* position: relative;
+    height: 100%; */
+    /* display: grid;
     align-items: center;
-    text-align: center;
+    justify-content: center;  */
 }
-
-/* .break {
-    display: grid;
-    align-items: center;
-    text-align: center;
-} */
 
 /* CAROUSEL */
 
@@ -442,7 +438,9 @@ img {
 .quotes h2 {
     font-family: "Nathan";
     font-size: var(--fs-md);
+    font-weight: normal;
     text-align: left;
+    display: inline;
 }
 
 .media-quote p {
