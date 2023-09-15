@@ -150,7 +150,7 @@ carouselNav.addEventListener("click", e => {
 })
 
 
-
+// THE FOLLOWING HIDES AND SHOWS PREV/NEXT ARROWS ON CAROUSEL
 
 // const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
 //     if (targetIndex === 0) {
@@ -166,9 +166,9 @@ carouselNav.addEventListener("click", e => {
 // }
 
 
-////// parallax / fade-in //////
+////// projects fade-in //////
 
-const projects = document.querySelectorAll(".fade-in");
+const projects = document.querySelectorAll(".card__img-layout");
 
 // console.log(projects)
 
@@ -178,19 +178,84 @@ const fadeOptions = {
     rootMargin: "-150px"
 };
 
-const fadeIn = function(entries, observer) {
+const powerOn = function(entries, observer) {
     for (entry of entries) {
-        if(!entry.isIntersecting) {
-            return;
-        }
-        console.log(entry.target);
-        entry.target.classList.add("appear");
-        observer.unobserve(entry.target)
+        // if(!entry.isIntersecting) {
+        //     return;
+        // }
+        // console.log(entry.target);
+        entry.target.classList.toggle("on");
+        // observer.unobserve(entry.target)
     }
 }
 
-const appearOnScroll = new IntersectionObserver(fadeIn, fadeOptions)
+const powerOnScroll = new IntersectionObserver(powerOn, fadeOptions)
 
 for (project of projects) {
-    appearOnScroll.observe(project);
+    powerOnScroll.observe(project);
 }
+
+
+
+////// personality sections //////
+
+// CURRENTLY UNUSED // CURRENTLY UNUSED // CURRENTLY UNUSED // CURRENTLY UNUSED
+
+
+// const personalitySections = document.querySelectorAll(".personality");
+// // console.log(personalitySections)
+
+// const reveal = function(entries, observer) {
+//     for (entry of entries) {
+//         console.log(entry);
+//         entry.target.classList.toggle("personality-open");
+//     }
+// }
+
+// const showPersonality = new IntersectionObserver(reveal)
+
+// for (sect of personalitySections) {
+//     showPersonality.observe(sect);
+// }
+
+
+
+////// make my face slide onscreen //////
+
+// CURRENTLY UNUSED // CURRENTLY UNUSED // CURRENTLY UNUSED // CURRENTLY UNUSED
+
+// const miCon = document.querySelector("#miCon");
+// const miCon_alt = document.querySelector("#miCon_alt");
+// const mobileWidth = 640;
+
+// const miCon_rect = miCon.getBoundingClientRect();
+// const miCon_alt_rect = miCon_alt.getBoundingClientRect();
+// console.log(miCon_rect.left);
+
+// const visibleSwap = () => {
+//     miCon.classList.add("invisible")
+//     miCon_alt.classList.remove("invisible")
+// }
+
+// const descend = () => {
+//     if (window.innerWidth <= mobileWidth) {
+//         console.log("tiny")
+//     } else {
+//         console.log("HUGE")
+//         miCon.style.left = `${mobileWidth*2}px`
+//         miCon.style.top = `${miCon_alt_rect.top}px`
+//         miCon.style.bottom = `${miCon_alt_rect.bottom}px`
+//         miCon.style.right = `${miCon_alt_rect.right}px`
+//         console.log(miCon.style.left)
+//         miCon.style.transform = `translateX(-${mobileWidth}px)`;
+//         miCon.style.transition = "all 3s";
+//     }
+//     setTimeout("visibleSwap()", 3000);
+// }
+
+// window.onload = descend();
+
+
+
+////// parallax //////
+
