@@ -94,7 +94,7 @@ function autoScrollSlide() {
     setTimeout("autoScrollSlide()", 8000);
 }
 
-window.onload = autoScrollSlide();
+// window.onload = autoScrollSlide();
 
 
 // event listeners
@@ -166,13 +166,15 @@ carouselNav.addEventListener("click", e => {
 // }
 
 
-////// projects fade-in //////
+////// projects power on //////
 
 // const projects = document.querySelectorAll(".off");
 const projects = document.querySelectorAll(".card__img-layout");
 const powerLights = document.querySelectorAll(".power");
+const videos = document.querySelectorAll(".project-video");
+// const videoPortfolio = document.querySelector("#video_portfolio");
 
-console.log(projects)
+// console.log(videoPortfolio)
 
 const projectOptions = {
     root: null, // default to the viewport
@@ -206,6 +208,42 @@ const screenOnScroll = new IntersectionObserver(screenOn, projectOptions)
 for (project of projects) {
     screenOnScroll.observe(project);
 }
+
+const videoOptions = {
+    root: null, // default to the viewport
+    threshold: .9, // % of section that must be within viewport in order to trigger
+    rootMargin: "-60px"
+};
+
+const videoOn = function(entries, observer) {
+    for (entry of entries) {
+        console.log(entry.target)
+        if (!entry.isIntersecting) {
+            entry.target.pause();
+        } else {
+            entry.target.play();
+        }
+    }
+}
+
+const videoOnScroll = new IntersectionObserver(videoOn, videoOptions)
+
+for (video of videos) {
+    videoOnScroll.observe(video);
+}
+
+
+
+// const videoOn = function(entries, observer) {
+//     console.log(entry)
+//     for (entry of entries) {
+//         if (videoPortfolio.intersectionRatio > 0) {
+//             videoPortfolio.play();
+//         } else {
+//             videoPortfolio.pause();
+//         }
+//     }
+// }
 
 
 
