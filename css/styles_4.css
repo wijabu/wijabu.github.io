@@ -10,6 +10,7 @@
 
     --bg-prp: rgba(50, 23, 77, 1);
     --bg-blk: rgba(15, 15, 15, 1);
+    --bg-wht: rgba(250, 235, 215, .5);
 }
 
 a {
@@ -158,13 +159,13 @@ body {
 
 
 .project-power {
-    /* box-shadow: 0 5px 20px 0 rgba(250, 235, 215, .5); */
+    /* box-shadow: var(--bg-wht)*/
     transform: translateY(0);
     transition: 300ms ease-in;
 }
 
 .project-power.on {
-    box-shadow: 0 5px 20px 0 rgba(250, 235, 215, .5);
+    box-shadow: 0 5px 20px 0 var(--bg-wht);
     transform: translateY(-0.25em);
 }
 
@@ -204,6 +205,7 @@ body {
     border-radius: 15px;
     padding: 1rem;
     display: grid;
+    position: relative;
 }
 
 .card__source {
@@ -214,7 +216,7 @@ body {
 }
 
 .card__title {
-    margin: .5em 0 0;
+    margin: .5em 1em 0 0;
 }
 
 /* CAROUSEL */
@@ -418,7 +420,7 @@ header {
     background-color: white;
     border-bottom: 1px solid var(--bg-blk);
     position: fixed;
-    z-index: 90;
+    z-index: 200;
     width: 100%;
     display: flex;
     align-items: center;
@@ -497,6 +499,19 @@ img {
     transition: .3s ease-in-out;
 }
 
+#miCon,
+#miCon_alt {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+#miCon {
+    /* position: absolute; */
+    z-index: 9;
+}
+
 .navigation-list {
     margin-right: 2rem;
     margin-left: auto;
@@ -567,19 +582,6 @@ img {
     display: grid;
     align-items: center;
     overflow-clip-margin: none;
-}
-
-#miCon,
-#miCon_alt {
-    max-width: 300px;
-    max-height: 300px;
-    border-radius: 50%;
-    margin-bottom: 2rem;
-}
-
-#miCon {
-    /* position: absolute; */
-    z-index: 9;
 }
 
 .profile__text {
@@ -690,6 +692,10 @@ img {
         display: none;
     }
 
+    #power-LED {
+        margin: 1.5em .6em 0 0;
+    }
+
     .primary {
         padding: 6rem;
     }
@@ -769,8 +775,19 @@ img {
         padding-right: 1.75em;
     }
 
+    #miCon,
+    #miCon_alt {
+        max-width: 200px;
+        max-height: 200px;
+        margin-top: 2rem;
+    }
+
     .navigation-list__item {
         display: none;
+    }
+
+    #power-LED {
+        margin: .85em .6em 0 0;
     }
 
     .primary {
@@ -783,13 +800,6 @@ img {
 
     }
 
-    #miCon,
-    #miCon_alt {
-        max-width: 200px;
-        max-height: 200px;
-        margin-top: 2rem;
-    }
-
     .white {
         font-size: var(--fs-md);
     }
@@ -799,7 +809,33 @@ img {
 /* testing */
 
 
-/* FOR POWER LED */
-/* Add circle */
-/* inner shadow */
-/* red on */
+
+#power-LED {
+    width: 10px;
+    height: 10px;
+    z-index: 111;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    background-color: rgb(226,0,0);
+    box-shadow: inset 0px 1px 0px 0px rgba(250,250,250,0.5),
+    0px 0px 3px 2px rgba(226,0,0,0.5);
+   }
+
+#power-LED.on {
+    box-shadow: inset 0px 1px 0px 0px rgba(250,250,250,0.5),
+    0px 0px 3px 2px rgba(135,187,83,0.5);
+    background-color: rgb(135,187,83);
+}
+
+.card__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#power-title {
+    color: var(--bg-blk);
+    text-shadow: 1px 1px 2px var(--bg-wht);
+    transform: translateY(50%);
+}

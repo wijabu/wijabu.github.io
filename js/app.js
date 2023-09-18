@@ -168,32 +168,45 @@ carouselNav.addEventListener("click", e => {
 
 ////// projects fade-in //////
 
+// const projects = document.querySelectorAll(".off");
 const projects = document.querySelectorAll(".card__img-layout");
+const powerLights = document.querySelectorAll(".power");
 
-// console.log(projects)
+console.log(projects)
 
-const fadeOptions = {
+const projectOptions = {
     root: null, // default to the viewport
-    threshold: 0, // % of section that must be within viewport in order to trigger
-    rootMargin: "-150px"
+    threshold: 1, // % of section that must be within viewport in order to trigger
+    rootMargin: "-60px"
 };
 
-const powerOn = function(entries, observer) {
+const lightsOn = function(entries, observer) {
+    // console.log(projects)
     for (entry of entries) {
-        // if(!entry.isIntersecting) {
-        //     return;
-        // }
         // console.log(entry.target);
         entry.target.classList.toggle("on");
-        // observer.unobserve(entry.target)
     }
 }
 
-const powerOnScroll = new IntersectionObserver(powerOn, fadeOptions)
+const powerOnScroll = new IntersectionObserver(lightsOn, projectOptions)
+
+for (light of powerLights) {
+    powerOnScroll.observe(light);
+}
+
+const screenOn = function(entries, observer) {
+    for (entry of entries) {
+        // console.log(entry.target)
+        entry.target.classList.toggle("on");
+    };
+}
+
+const screenOnScroll = new IntersectionObserver(screenOn, projectOptions)
 
 for (project of projects) {
-    powerOnScroll.observe(project);
+    screenOnScroll.observe(project);
 }
+
 
 
 
