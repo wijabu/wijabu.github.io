@@ -94,7 +94,7 @@ function autoScrollSlide() {
     setTimeout("autoScrollSlide()", 8000);
 }
 
-// window.onload = autoScrollSlide();
+window.onload = autoScrollSlide();
 
 
 // event listeners
@@ -217,7 +217,7 @@ const videoOptions = {
 
 const videoOn = function(entries, observer) {
     for (entry of entries) {
-        console.log(entry.target)
+        // console.log(entry.target)
         if (!entry.isIntersecting) {
             entry.target.pause();
         } else {
@@ -231,19 +231,6 @@ const videoOnScroll = new IntersectionObserver(videoOn, videoOptions)
 for (video of videos) {
     videoOnScroll.observe(video);
 }
-
-
-
-// const videoOn = function(entries, observer) {
-//     console.log(entry)
-//     for (entry of entries) {
-//         if (videoPortfolio.intersectionRatio > 0) {
-//             videoPortfolio.play();
-//         } else {
-//             videoPortfolio.pause();
-//         }
-//     }
-// }
 
 
 
