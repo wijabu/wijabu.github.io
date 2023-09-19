@@ -94,6 +94,7 @@ function autoScrollSlide() {
     setTimeout("autoScrollSlide()", 8000);
 }
 
+// auto-play slides
 window.onload = autoScrollSlide();
 
 
